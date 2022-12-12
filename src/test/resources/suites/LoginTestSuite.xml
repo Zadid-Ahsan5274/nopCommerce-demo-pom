@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="nopCommerce Demo Automation Login Test Suite">
     <test name="nopCommerce Demo Automation Login Test Case">
-        <parameter name="browser" value="chrome"></parameter>
+        <parameter name="browser" value=""></parameter>
         <classes>
             <class name="com.nopcommerce.testCases.LoginPageTestRunner"></class>
         </classes>

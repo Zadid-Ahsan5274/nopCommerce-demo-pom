@@ -9,7 +9,6 @@ import org.openqa.selenium.support.PageFactory;
 public class CustomerPage {
 
    @FindBy(xpath = "//a[@href='#']//p[contains(text(),'Customers')]")
-   @CacheLookup
    public WebElement customerLink;
 
    @FindBy(xpath = "//a[@class='btn btn-primary']")

@@ -10,15 +10,12 @@ public class DashboardPage {
     WebDriver driver;
 
     @FindBy(partialLinkText = "Logout")
-    @CacheLookup
     public WebElement lnkLogout;
 
     @FindBy(xpath = "//img[@class='brand-image-xl logo-xl']")
-    @CacheLookup
     public WebElement companyLogo;
 
     @FindBy(xpath = "//input[@placeholder='Search']")
-    @CacheLookup
     public WebElement searchBox;
 
     @FindBy(xpath = "//i[@class='fas fa-cogs']")

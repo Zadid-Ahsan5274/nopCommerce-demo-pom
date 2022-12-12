@@ -10,27 +10,21 @@ public class LoginPage {
     WebDriver driver;
 
     @FindBy(id = "Email")
-    @CacheLookup
     WebElement txtEmail;
 
     @FindBy(id = "Password")
-    @CacheLookup
     WebElement txtPassword;
 
     @FindBy(id = "RememberMe")
-    @CacheLookup
     WebElement checkBoxRememberMe;
 
     @FindBy(id = "Email-error")
-    @CacheLookup
     public WebElement emailWarningText;
 
     @FindBy(className = "validation-summary-errors")
-    @CacheLookup
     public WebElement noCustomerFoundWarning;
 
     @FindBy(xpath = "//button[@type='submit']")
-    @CacheLookup
     WebElement btnSubmit;
 
     public LoginPage(WebDriver driver) {
