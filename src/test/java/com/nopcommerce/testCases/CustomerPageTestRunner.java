@@ -3,10 +3,11 @@ package com.nopcommerce.testCases;
 import com.nopcommerce.pageObjects.CustomerPage;
 import com.nopcommerce.pageObjects.DashboardPage;
 import com.nopcommerce.pageObjects.LoginPage;
-import org.junit.Assert;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -42,7 +43,7 @@ public class CustomerPageTestRunner extends BaseClass{
         Assert.assertTrue(email_text.equals("arthur_holmes@nopCommerce.com"));
     }
 
-    //@Test(priority = 2)
+    @Test(priority = 2)
     public void searchByDOB(){
         customerPage = new CustomerPage(driver);
         customerPage.dobMonthDropdown.click();
@@ -56,7 +57,8 @@ public class CustomerPageTestRunner extends BaseClass{
         }
         customerPage.dobDayDropdown.sendKeys(Keys.ENTER);
         customerPage.searchCustomers.click();
-
+        String table_text = driver.findElement(By.className("dataTables_empty")).getText();
+        Assert.assertTrue(table_text.equals("No data available in table"));
     }
 
     @AfterMethod

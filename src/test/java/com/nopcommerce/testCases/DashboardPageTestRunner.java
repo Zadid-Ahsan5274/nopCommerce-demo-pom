@@ -3,10 +3,13 @@ package com.nopcommerce.testCases;
 import com.nopcommerce.pageObjects.DashboardPage;
 import com.nopcommerce.pageObjects.LoginPage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 public class DashboardPageTestRunner extends BaseClass{
     LoginPage loginPage;
@@ -35,6 +38,9 @@ public class DashboardPageTestRunner extends BaseClass{
     public void searchFunctionality(){
         dashboardPage = new DashboardPage(driver);
         dashboardPage.searchBox.sendKeys("Customers");
+        List<WebElement> searchSuggestions = driver.findElements(By.className("tt-selectable"));
+        String searchSuggestionText = searchSuggestions.get(0).getText();
+        Assert.assertTrue(searchSuggestionText.contains("Customer"));
     }
 
     @Test(priority = 4)
