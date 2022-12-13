@@ -1,6 +1,7 @@
 package com.nopcommerce.utilities;
 
 import com.github.javafaker.Faker;
+import jdk.jshell.execution.Util;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
@@ -14,7 +15,7 @@ public class Utils {
     private String lastname;
     private String username;
 
-    public static String getFirstname() {
+    public String getFirstname() {
         return firstname;
     }
 
@@ -22,7 +23,7 @@ public class Utils {
         this.firstname = firstname;
     }
 
-    public static String getLastname() {
+    public  String getLastname() {
         return lastname;
     }
 
@@ -30,7 +31,7 @@ public class Utils {
         this.lastname = lastname;
     }
 
-    public static String getUsername() {
+    public  String getUsername() {
         return username;
     }
 
@@ -48,5 +49,13 @@ public class Utils {
         setFirstname(faker.name().firstName());
         setLastname(faker.name().lastName());
         setUsername(faker.name().username());
+    }
+
+    public static void main(String[] args) {
+        Utils util = new Utils();
+        System.out.println(util.getFirstname());
+        System.out.println(util.getLastname());
+        System.out.println(util.getUsername());
+        System.out.println(util.generateRandomNumber(45,10));
     }
 }

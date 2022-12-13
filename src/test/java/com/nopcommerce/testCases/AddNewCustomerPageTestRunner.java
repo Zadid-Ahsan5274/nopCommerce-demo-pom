@@ -5,6 +5,7 @@ import com.nopcommerce.pageObjects.CustomerPage;
 import com.nopcommerce.pageObjects.DashboardPage;
 import com.nopcommerce.pageObjects.LoginPage;
 import com.nopcommerce.utilities.Utils;
+import jdk.jshell.execution.Util;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -38,9 +39,10 @@ public class AddNewCustomerPageTestRunner extends BaseClass{
         addNewCustomerPage.setPassword("P@ssword123");
         addNewCustomerPage.setFirstName("Tom");
         addNewCustomerPage.setLastName("Rodger");*/
-        String fName = Utils.getFirstname();
-        String lName = Utils.getLastname();
-        String userName = Utils.getUsername();
+        Utils utils = new Utils();
+        String fName = utils.getFirstname();
+        String lName = utils.getLastname();
+        String userName = utils.getUsername();
         String email = userName +"@mail.com";
         addNewCustomerPage.setEmail(email);
         addNewCustomerPage.setPassword("P@ssword123");
