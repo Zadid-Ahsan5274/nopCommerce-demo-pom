@@ -40,6 +40,7 @@ public class AddNewCustomerPageTestRunner extends BaseClass{
         addNewCustomerPage.setFirstName("Tom");
         addNewCustomerPage.setLastName("Rodger");*/
         Utils utils = new Utils();
+        utils.generateRandomData();
         String fName = utils.getFirstname();
         String lName = utils.getLastname();
         String userName = utils.getUsername();

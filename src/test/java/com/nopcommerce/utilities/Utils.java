@@ -50,12 +50,4 @@ public class Utils {
         setLastname(faker.name().lastName());
         setUsername(faker.name().username());
     }
-
-    public static void main(String[] args) {
-        Utils util = new Utils();
-        System.out.println(util.getFirstname());
-        System.out.println(util.getLastname());
-        System.out.println(util.getUsername());
-        System.out.println(util.generateRandomNumber(45,10));
-    }
 }
