@@ -50,15 +50,16 @@ public class CustomerPageTestRunner extends BaseClass{
             customerPage.dobMonthDropdown.sendKeys(Keys.ARROW_DOWN);
         }
         customerPage.dobMonthDropdown.sendKeys(Keys.ENTER);
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         customerPage.dobDayDropdown.click();
-        for(int i = 0; i < 20; i++){
+        for(int i = 0; i < 10; i++){
             customerPage.dobDayDropdown.sendKeys(Keys.ARROW_DOWN);
         }
         customerPage.dobDayDropdown.sendKeys(Keys.ENTER);
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         customerPage.searchCustomers.click();
         String table_text = driver.findElement(By.className("dataTables_empty")).getText();
+        //String table_text = driver.findElement(By.id("customers-grid")).getText();
         Assert.assertTrue(table_text.equals("No data available in table"));
     }
 
