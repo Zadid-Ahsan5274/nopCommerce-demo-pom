@@ -4,6 +4,7 @@ import com.nopcommerce.pageObjects.AddNewCustomerPage;
 import com.nopcommerce.pageObjects.CustomerPage;
 import com.nopcommerce.pageObjects.DashboardPage;
 import com.nopcommerce.pageObjects.LoginPage;
+import com.nopcommerce.utilities.Utils;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -33,11 +34,19 @@ public class AddNewCustomerPageTestRunner extends BaseClass{
     @Test(priority = 1)
     public void createNewEmployee() throws InterruptedException {
         addNewCustomerPage = new AddNewCustomerPage(driver);
-        addNewCustomerPage.setEmail("az_test3@mail.com");
+        /*addNewCustomerPage.setEmail("az_test6@mail.com");
         addNewCustomerPage.setPassword("P@ssword123");
         addNewCustomerPage.setFirstName("Tom");
-        addNewCustomerPage.setLastName("Rodger");
-        addNewCustomerPage.setGender();
+        addNewCustomerPage.setLastName("Rodger");*/
+        String fName = Utils.getFirstname();
+        String lName = Utils.getLastname();
+        String userName = Utils.getUsername();
+        String email = userName +"@mail.com";
+        addNewCustomerPage.setEmail(email);
+        addNewCustomerPage.setPassword("P@ssword123");
+        addNewCustomerPage.setFirstName(fName);
+        addNewCustomerPage.setLastName(lName);
+        //addNewCustomerPage.setGender();
         addNewCustomerPage.setDOB("4/20/1996");
         addNewCustomerPage.setCompanyName("ABC Company");
         addNewCustomerPage.taxExempt();
@@ -47,7 +56,7 @@ public class AddNewCustomerPageTestRunner extends BaseClass{
         Thread.sleep(5000);
         String expected_message = "The new customer has been added successfully.";
         String actual_message = driver.findElement(By.xpath("//div[@class='alert alert-success alert-dismissable']")).getText();
-        Assert.assertTrue(actual_message.equals(expected_message));
+        Assert.assertTrue(actual_message.contains(expected_message));
     }
 
     @AfterMethod

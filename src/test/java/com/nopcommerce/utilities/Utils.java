@@ -14,7 +14,7 @@ public class Utils {
     private String lastname;
     private String username;
 
-    public String getFirstname() {
+    public static String getFirstname() {
         return firstname;
     }
 
@@ -22,7 +22,7 @@ public class Utils {
         this.firstname = firstname;
     }
 
-    public String getLastname() {
+    public static String getLastname() {
         return lastname;
     }
 
@@ -30,7 +30,7 @@ public class Utils {
         this.lastname = lastname;
     }
 
-    public String getUsername() {
+    public static String getUsername() {
         return username;
     }
 
