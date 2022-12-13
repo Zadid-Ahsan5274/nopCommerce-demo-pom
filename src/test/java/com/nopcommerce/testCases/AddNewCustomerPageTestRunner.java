@@ -36,7 +36,7 @@ public class AddNewCustomerPageTestRunner extends BaseClass{
         addNewCustomerPage.setEmail("az_test3@mail.com");
         addNewCustomerPage.setPassword("P@ssword123");
         addNewCustomerPage.setFirstName("Tom");
-        addNewCustomerPage.setLastName("Dick");
+        addNewCustomerPage.setLastName("Rodger");
         addNewCustomerPage.setGender();
         addNewCustomerPage.setDOB("4/20/1996");
         addNewCustomerPage.setCompanyName("ABC Company");
